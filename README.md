@@ -43,15 +43,35 @@ Full answers, key findings and recommendations: [`report/Track_C_Findings.pdf`](
 │   └── dashboard_screenshot.png
 └── data/                          # NOT included: place the 8 Olist CSV files here locally
 ```
-
 ## Data
 
-Public dataset: **Brazilian E-Commerce Public Dataset by Olist** (Kaggle). The raw CSV files are **not** stored in this repository. Download them and place these 8 files in one folder (for example `C:\olist_raw\`):
+**Dataset:** Brazilian E-Commerce Public Dataset by Olist (Kaggle)  
+**Source:** https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce  
+**License:** see the dataset page (CC BY-NC-SA 4.0 at the time of writing)  
+**Period used in this project:** orders purchased 2017-01-01 to 2018-08-31  
+**Size:** 8 CSV files, 99,441 orders (before filtering)
 
-`olist_customers_dataset.csv`, `olist_orders_dataset.csv`, `olist_order_items_dataset.csv`, `olist_products_dataset.csv`, `olist_sellers_dataset.csv`, `olist_order_payments_dataset.csv`, `olist_order_reviews_dataset.csv`, `product_category_name_translation.csv`
+The raw CSV files are **not stored in this repository** (license and size). To reproduce the project:
+
+1. Download the dataset from the Kaggle link above.
+2. Put these 8 files in one folder, for example `C:\olist_raw\`:
+
+| File | Rows | Content |
+|---|---|---|
+| `olist_customers_dataset.csv` | 99,441 | customers and location |
+| `olist_orders_dataset.csv` | 99,441 | orders, status, dates |
+| `olist_order_items_dataset.csv` | 112,650 | items, price, freight |
+| `olist_order_payments_dataset.csv` | 103,886 | payments |
+| `olist_order_reviews_dataset.csv` | 99,224 | review scores and comments |
+| `olist_products_dataset.csv` | 32,951 | products and category |
+| `olist_sellers_dataset.csv` | 3,095 | sellers and location |
+| `product_category_name_translation.csv` | 71 | category names in English |
+
+3. Set the folder path in `sql/01_schema.sql` (`@DataPath`) and run the scripts in order (see below).
 
 Do not open and re-save the files in Excel; this can change line endings and quotes.
 
+The files in `results/` are **aggregate outputs** of the SQL queries (no customer-level data).
 ## How to reproduce
 
 **Requirements:** SQL Server 2017 or newer, SSMS, permission to run `BULK INSERT`, Excel.
