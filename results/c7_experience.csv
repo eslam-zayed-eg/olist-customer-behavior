@@ -1,0 +1,5 @@
+﻿basis,customer_group,delivered_orders,orders_with_valid_dates,avg_delivery_days,late_orders,reviewed_orders,avg_review_score,low_rated_orders
+a. all delivered orders,single-order customers,90315,90307,12.55,6192,89724,4.152,11536
+a. all delivered orders,repeat customers,5896,5896,12.30,339,5844,4.216,693
+b. first delivered order only,single-order customers,90315,90307,12.55,6192,89724,4.152,11536
+b. first delivered order only,repeat customers,2789,2789,12.40,160,2768,4.199,334

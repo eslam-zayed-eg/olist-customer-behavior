@@ -1,0 +1,5 @@
+﻿value_group,customers,delivered_orders,merchandise_sales_brl
+a. lower (below p50),46519,46997,2196978.46
+b. middle (p50-p90),37267,38889,5564596.01
+c. high (p90-p99),8383,9307,3902908.84
+d. top 1%,935,1018,1516543.82
